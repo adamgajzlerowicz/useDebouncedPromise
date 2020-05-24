@@ -9,11 +9,7 @@ const mockPromise = () => new Promise(resolve => {
 })
 
 export const App = () => {
-    const onResolve = () => {
-        alert('all done')
-    }
-
-    const debouncedAction = useDebouncedPromise('hello', onResolve)
+    const debouncedAction = useDebouncedPromise('hello', () => alert('all done'))
 
     return (
         <button onClick={() => debouncedAction(mockPromise)}>do stuff</button>
