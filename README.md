@@ -16,10 +16,8 @@ const mockPromise = () => new Promise(resolve => {
 })
 
 export const App = () => {
-    // make action
     const debouncedAction = useDebouncedPromise('hello', () => alert('all done'))
 
-    // call action as many times as you want. When last promise finishes, the callback will execute
     return (
         <button onClick={() => debouncedAction(mockPromise)}>do stuff</button>
     );
